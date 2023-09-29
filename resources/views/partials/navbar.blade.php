@@ -1,8 +1,8 @@
 <header class="bg-black text-white">
-     <div class="logo-box">
+    <!-- <div class="logo-box">
         <a href="{{route('Jobs.index')}}"><img class="logo" src="{{asset('pictures/logo.png')}}" alt="logo work up"></a>
 
-    </div>
+    </div> -->
     <nav class="topnav" id="myTopnav">
 
 
