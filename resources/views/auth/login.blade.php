@@ -2,7 +2,11 @@
 
 @section('content')
 <div class="auth">
-
+    @if (session('message4'))
+    <div class="mb-4 font-medium text-green-600 text-center">
+        <p>{{ session('message4') }}</p>
+    </div>
+    @endif
     <form method="POST" action="{{ route('login') }}" class="w-full max-w-sm mx-auto rounded-lg border shadow-md p-5 mb-5">
         @csrf
         <h1 class="font-semibold text-3xl text-per mb-6 text-center">Connexion</h1>
@@ -24,12 +28,12 @@
             @enderror
         </div>
         <div class="flex justify-between">
-        <div>
-            <a href="{{ route('passwordforgot') }}" class="text-per hover:text-orange-700 transition ease-in-out duration-500 text-sm">Mot de passe oublié ?</a>
-        </div>
-        <div class="mb-4">
-            <a href="{{ route('register') }}" class="text-per hover:text-orange-700 transition ease-in-out duration-500 text-sm">Pas encore inscrit ?</a>
-        </div>
+            <div>
+                <a href="{{ route('passwordforgot') }}" class="text-per hover:text-orange-700 transition ease-in-out duration-500 text-sm">Mot de passe oublié ?</a>
+            </div>
+            <div class="mb-4">
+                <a href="{{ route('register') }}" class="text-per hover:text-orange-700 transition ease-in-out duration-500 text-sm">Pas encore inscrit ?</a>
+            </div>
         </div>
 
         <button type="submit" class="bg-per text-white hover:bg-orange-700 transition ease-in-out duration-500 rounded-md shadow-md w-full block px-4 py-2 mt-3">Se connecter</button>

@@ -5,6 +5,16 @@
 .site > *{
     padding:0 1%;
 }
+.imgEmail{
+    width: 50%;
+    margin: 2% auto;
+}
+.imgEmail img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 .topnav {
     overflow: hidden;
@@ -29,29 +39,6 @@
 .box-annonces{
     width: 70%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .titre-annonce{
     font-size: 16px!important;

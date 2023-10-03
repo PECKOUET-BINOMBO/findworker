@@ -12,6 +12,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProposalController;
 use Illuminate\Routing\Controllers\Middleware;
 use App\Http\Controllers\ConversationController;
+use App\Http\Controllers\passwordEmailController;
 use App\Http\Controllers\UpdateProfilController;
 use App\Http\Middleware\CheckAccountValidity;
 /*
@@ -96,10 +97,10 @@ Route::group(['middleware' => ['auth', 'proposal']], function () {
     Route::post('/submit/{job}', [ProposalController::class, 'store'])->name('proposals.store');
 });
 
-Route::get('/forgot-password', function () {
-    return view('auth.passwordforgot');
-})->name('passwordforgot')->middleware('guest');
+Route::get('/forgot-password', [passwordEmailController::class, 'viewPasswordForgot'])->name('passwordforgot'); //formulaire email de mot de passe oublié
 
-Route::get('/formforgot-password', function () {
-    return view('auth.formpasswordforgot');
-})->name('formpasswordforgot')->middleware('guest');
+Route::get('/form', [passwordEmailController::class, 'formPasswordForgot']);//formulaire de mise à jour du mot de passe
+
+Route::post('/forgot-password', [passwordEmailController::class, 'emailPassword'])->name('password.email'); //envoie du mail
+
+Route::put('/forgot-password', [passwordEmailController::class, 'passwordForgot'])->name('password.update'); //mettre à jour le mot de passe
