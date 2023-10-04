@@ -103,4 +103,5 @@ Route::get('/form', [passwordEmailController::class, 'formPasswordForgot']);//fo
 
 Route::post('/forgot-password', [passwordEmailController::class, 'emailPassword'])->name('password.email'); //envoie du mail
 
+
 Route::put('/forgot-password', [passwordEmailController::class, 'passwordForgot'])->name('password.update'); //mettre à jour le mot de passe
