@@ -18,7 +18,7 @@
             <li class="category-item"><a href="{{ route('Jobs.prestataire', ['category' => 'Boulangerie']) }}">Boulangerie</a>
             </li>
             <li class="category-item"><a href="{{ route('Jobs.prestataire', ['category' => 'Caisse']) }}">Caissier/Caissière</a></li>
-            <li class="category-item"><a href="{{ route('Jobs.prestataire', ['category' => 'Chauffeur']) }}">Chauffeur</a>
+            <li class="category-item"><a href="{{ route('Jobs.prestataire', ['category' => 'Transport']) }}">Transport</a>
             </li>
             <li class="category-item"><a href="{{ route('Jobs.prestataire', ['category' => 'Coiffure']) }}">Coiffure</a>
             </li>

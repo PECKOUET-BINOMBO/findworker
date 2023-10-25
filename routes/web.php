@@ -50,6 +50,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/abonnement/{id}', [AbonnementController::class, 'show'])->middleware(CheckAccountValidity::class)->name('abonnement.show');
 
+    Route::get('/abonnement/{id}/modePaiement', [AbonnementController::class, 'modePaiement'])->name('abonnement.modePaiement');
+
     Route::get('/abonnement1/{id}', [AbonnementController::class, 'abonnement'])->name('abonnement.abonnement');
 
     Route::get('/abonnement2/{id}', [AbonnementController::class, 'abonnement2'])->name('abonnement.abonnement2');
@@ -57,6 +59,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/abonnement3/{id}', [AbonnementController::class, 'abonnement3'])->name('abonnement.abonnement3');
 
     Route::get('/abonnement4/{id}', [AbonnementController::class, 'abonnement4'])->name('abonnement.abonnement4');
+
+
 
 
 

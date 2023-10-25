@@ -19401,3 +19401,25 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+
+
+  paypal.Buttons({
+    createOrder : function(data, actions){
+        /* crée une variable qui va convertire le montant en devise de l'afrique de l'ouest en devise de l'Europe */
+
+
+
+        return actions.order.create({
+            purchase_units : [{
+                amount:{
+                    value : '10'//renseigner le montant que la personne doit verser sur votre compte
+                }
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+
+        alert('You have successfully created subscription ' + data.subscriptionID); //message d'alerte quand le paiment est effectué
+
+      }
+}).render('body');

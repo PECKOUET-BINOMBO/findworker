@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class AbonnementController extends Controller
 {
+    public function modePaiement(string $id)
+    {
+        $user = User::find($id);
+
+        return view('abonnement.paiement', compact('user'));
+    }
+
+
+
+
     /**
      * Display a listing of the resource.
      */
